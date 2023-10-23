@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import UrunlerList from "./components/UrunlerList";
+import FiltreliUrunList from "./components/FiltreliUrunList";
+import Sepet from "./components/Sepet";
+import Favoriler from "./components/Favoriler";
+import UrunDetay from "./components/UrunDetay";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<UrunlerList />}></Route>
+        <Route path="/category/:name" element={<FiltreliUrunList />}></Route>
+        <Route path="/urundetay/:id" element={<UrunDetay />}></Route>
+        <Route path="/sepet" element={<Sepet />}></Route>
+        <Route path="/favoriler" element={<Favoriler />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
