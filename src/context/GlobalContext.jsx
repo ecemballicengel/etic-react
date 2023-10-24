@@ -101,6 +101,11 @@ export function AppContextProvider({ children }) {
 
     setFavoriler(yeniFavoriler);
   };
+  const favoriKontrol = (id) => {
+    const secim = favoriler.some((falan) => falan.id === id);
+
+    return secim;
+  };
   //----------------------
 
   return (
@@ -120,6 +125,7 @@ export function AppContextProvider({ children }) {
         favoriler,
         favorilereEkle,
         favorilerdenCikar,
+        favoriKontrol,
       }}
     >
       {children}

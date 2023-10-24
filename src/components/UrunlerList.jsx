@@ -3,8 +3,15 @@ import { AppContext } from "../context/GlobalContext";
 import Coursel from "./Coursel";
 
 function UrunlerList() {
-  const { urunler, searchResults, searchQuery, SepeteEkle, favorilereEkle } =
-    useContext(AppContext);
+  const {
+    urunler,
+    searchResults,
+    searchQuery,
+    SepeteEkle,
+    favorilereEkle,
+    favoriKontrol,
+    favorilerdenCikar,
+  } = useContext(AppContext);
   const [items, setItems] = useState([]);
   //
   useEffect(() => {
@@ -41,15 +48,29 @@ function UrunlerList() {
                       </button>
                     </div>
                     <div className="col-md-6">
-                      <button
-                        className="btn btn-success"
-                        onClick={() => favorilereEkle(urun)}
-                      >
-                        <i
-                          className="fa-solid fa-heart"
-                          style={{ color: "white" }}
-                        />
-                      </button>
+                      {favoriKontrol(urun.id) ? (
+                        <button
+                          className="btn btn-success"
+                          onClick={() => favorilerdenCikar(urun.id)}
+                          title="Favorilere Cikar"
+                        >
+                          <i
+                            className="fa-solid fa-heart"
+                            style={{ color: "white" }}
+                          />
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-success"
+                          onClick={() => favorilereEkle(urun)}
+                          title="Favorilerden Ekle"
+                        >
+                          <i
+                            className="fa-solid fa-heart"
+                            style={{ color: "white" }}
+                          />
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
