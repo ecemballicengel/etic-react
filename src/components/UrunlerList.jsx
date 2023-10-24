@@ -6,6 +6,7 @@ function UrunlerList() {
   const { urunler, searchResults, searchQuery, SepeteEkle, favorilereEkle } =
     useContext(AppContext);
   const [items, setItems] = useState([]);
+  //
   useEffect(() => {
     setItems(urunler);
   });

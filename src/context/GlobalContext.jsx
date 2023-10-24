@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export const AppContext = createContext();
 export function AppContextProvider({ children }) {
@@ -54,6 +55,7 @@ export function AppContextProvider({ children }) {
       yeniSepet.push({ ...urun, quantity: 1 });
     }
     setSepet(yeniSepet);
+    Swal.fire("Sepete Eklendi!");
   }
   function SepettenCikar(id) {
     const eskiSepet = [...sepet];
@@ -74,6 +76,7 @@ export function AppContextProvider({ children }) {
     const yeniSepetFiltrelenmis = yeniSepet.filter((urun) => urun !== null);
 
     setSepet(yeniSepetFiltrelenmis);
+    Swal.fire("Urun Silindi!");
   }
 
   const toplam = sepet.reduce(
