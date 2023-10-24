@@ -31,7 +31,7 @@ function Sepet() {
                       className="btn btn-outline-danger"
                       onClick={() => SepettenCikar(urun.id)}
                     >
-                      Sepetten Çıkar
+                      Sil
                     </button>
                   </div>
                 </div>

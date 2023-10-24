@@ -25,17 +25,6 @@ function FiltreliUrunList() {
                 <div className="card-body">
                   <h5 className="card-title text-truncate">{urun.title}</h5>
                   <p className="card-text">Fiyat: {urun.price} ₺</p>
-                  <input
-                    type="number"
-                    min="1"
-                    // value={quantities[item.id] || 1}
-                    // onChange={(e) =>
-                    //   handleQuantityChange(item.id, e.target.value)
-                    // }
-                    className="p-2 border rounded"
-                    placeholder="Miktar"
-                    style={{ fontSize: "12px" }}
-                  />
                   <div className="row">
                     <div className="col-md-6">
                       <button

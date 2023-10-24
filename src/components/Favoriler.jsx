@@ -30,7 +30,6 @@ function Favoriler() {
                   <div className="card-body">
                     <h5 className="card-title text-truncate">{urun.title}</h5>
                     <p className="card-text">Fiyat: {urun.price}</p>
-                    <p className="card-text">Ürün Miktarı: {urun.quantity}</p>
                     {favoriKontrol(urun.id) ? (
                       <button
                         className="btn btn-warning"

@@ -52,7 +52,7 @@ function UrunlerList() {
                         <button
                           className="btn btn-success"
                           onClick={() => favorilerdenCikar(urun.id)}
-                          title="Favorilere Cikar"
+                          title="Favorilerden Cikar"
                         >
                           <i
                             className="fa-solid fa-heart"
@@ -63,7 +63,7 @@ function UrunlerList() {
                         <button
                           className="btn btn-success"
                           onClick={() => favorilereEkle(urun)}
-                          title="Favorilerden Ekle"
+                          title="Favorilere Ekle"
                         >
                           <i
                             className="fa-solid fa-heart"
